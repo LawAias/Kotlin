@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         recycler_view.layoutManager = LinearLayoutManager(this)
         val items = resources.getStringArray(R.array.items)
-        var list = items.asList()
+        val list = items.asList()
         recycler_view.adapter = MyAdapter(list!!, this)
     }
 }

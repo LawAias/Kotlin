@@ -15,10 +15,12 @@ import sihuan.com.kotlin.R
  * Created by sihuan on 2016/11/1.
  */
 class MyAdapter(val item: List<String>, val context: Context) : Adapter<MyAdapter.ViewHolder>() {
-    var inflater: LayoutInflater
+    val inflater: LayoutInflater
+    val mContext: Context
 
     init {
         inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        mContext = context
     }
 
     override fun getItemCount(): Int = item.size
@@ -31,6 +33,9 @@ class MyAdapter(val item: List<String>, val context: Context) : Adapter<MyAdapte
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         holder?.tv?.text = item.get(position)
         holder?.image?.setImageResource(R.mipmap.ic_launcher)
+        holder?.rootview?.setOnClickListener {
+//            mContext.startActivity(Intent(mContext,))
+        }
     }
 
 
