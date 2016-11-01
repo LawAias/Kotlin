@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Kotlin</string>
+
+    <string-array name="items">
+        <item>Mon 6/23 - Sunny - 31/17</item>
+        <item>Tue 6/24 - Foggy - 21/8</item>
+        <item>Wed 6/25 - Cloudy - 22/17</item>
+        <item>Thurs 6/26 - Rainy - 18/11</item>
+        <item>Fri 6/27 - Foggy - 21/10</item>
+        <item>Sat 6/28 - Foggy - 23/18</item>
+        <item>Sun 6/29 - Sunny - 20/7</item>
+    </string-array>
 </resources>
