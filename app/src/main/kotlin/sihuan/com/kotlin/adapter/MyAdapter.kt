@@ -14,7 +14,7 @@ import sihuan.com.kotlin.R
  *sihuan.com.kotlin.adapter
  * Created by sihuan on 2016/11/1.
  */
-class MyAdapter(val item: List<String>, val context: Context) : Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(val item: List<String>, context: Context) : Adapter<MyAdapter.ViewHolder>() {
     val inflater: LayoutInflater
     val mContext: Context
 
@@ -26,7 +26,7 @@ class MyAdapter(val item: List<String>, val context: Context) : Adapter<MyAdapte
     override fun getItemCount(): Int = item.size
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        var view = inflater.inflate(R.layout.item_recyler, parent, false)
+        val view = inflater.inflate(R.layout.item_recyler, parent, false)
         return ViewHolder(view)
     }
 
