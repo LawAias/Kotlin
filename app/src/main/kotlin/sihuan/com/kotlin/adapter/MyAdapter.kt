@@ -9,12 +9,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import sihuan.com.kotlin.R
+import sihuan.com.kotlin.net.bean.WeatherInfos
 
 /**
  *sihuan.com.kotlin.adapter
  * Created by sihuan on 2016/11/1.
  */
-class MyAdapter(val item: List<String>, context: Context) : Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(val item: List<WeatherInfos.WeatherInfo>?, context: Context) : Adapter<MyAdapter.ViewHolder>() {
     val inflater: LayoutInflater
     val mContext: Context
 
@@ -23,7 +24,7 @@ class MyAdapter(val item: List<String>, context: Context) : Adapter<MyAdapter.Vi
         mContext = context
     }
 
-    override fun getItemCount(): Int = item.size
+    override fun getItemCount(): Int = item?.size as Int
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
         val view = inflater.inflate(R.layout.item_recyler, parent, false)
@@ -31,7 +32,7 @@ class MyAdapter(val item: List<String>, context: Context) : Adapter<MyAdapter.Vi
     }
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        holder?.tv?.text = item.get(position)
+        holder?.tv?.text = item?.get(position)?.weather?.get(0)?.main
         holder?.image?.setImageResource(R.mipmap.ic_launcher)
         holder?.rootview?.setOnClickListener {
 //            mContext.startActivity(Intent(mContext,))
