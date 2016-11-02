@@ -32,7 +32,8 @@ class MyAdapter(val item: List<WeatherInfos.WeatherInfo>?, context: Context) : A
     }
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        holder?.tv?.text = item?.get(position)?.weather?.get(0)?.main
+        val weather = item?.get(position)
+        holder?.tv?.text = weather?.weather?.get(0)?.main + weather?.temp?.eve + "摄氏度"
         holder?.image?.setImageResource(R.mipmap.ic_launcher)
         holder?.rootview?.setOnClickListener {
 //            mContext.startActivity(Intent(mContext,))

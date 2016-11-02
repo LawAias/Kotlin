@@ -22,7 +22,7 @@ open class WeatherInfos {
 
 
     open class WeatherInfo {
-        open var tmep: Temp? = null
+        open var temp: Tmep? = null
         open var pressure: Float? = 0.0f
         open var humidity: Int = 0
         open var speed: Float = 0.0f
@@ -38,7 +38,7 @@ open class WeatherInfos {
 
         }
 
-        open class Temp {
+        open class Tmep {
             open var day: Float = 0.0f
             open var min: Float = 0.0f
             open var max: Float = 0.0f
